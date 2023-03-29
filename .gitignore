@@ -1,3 +1,9 @@
+# From Starter Code
+node_modules
+package-lock.json
+.vscode
+.DS_Store
+
 # Logs
 logs
 *.log
