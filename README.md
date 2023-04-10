@@ -1,3 +1,4 @@
+
 # README Generator
 
 ## Description
@@ -12,16 +13,20 @@ This project was built to make it easier to create README templates filled with 
 
 ## Installation
 
-* Ensure Node and npm are installed
-* Run 'npm i' to install required dependencies
-* Run 'npm start' or 'Node index.js' to start the program
+- Ensure Node and npm are installed
+- Run 'npm i' to install required dependencies
+- Run 'npm start' or 'Node index.js' to start the program
 
 ## Usage
 
 This program can be used to create a starting template for a README file to be included with any project. The generated file is a simple markdown file, and can be further modified to meet your particular needs. Things like screenshots and links will need to be added manually, as those are not able to be generated through this program at this time.
 
-Note: This README file was created using the program, with only minor edits (screenshots, links, proofing).
+## Future Development
+
+- Additional README sections
+- Table of Contents
+- Languages-used badges
 
 ## License
 
-Please refer to the LICENSE in the repo.
+![license](https://img.shields.io/badge/license-MIT-green) Please refer to the [LICENSE](./LICENSE) in the repo.
