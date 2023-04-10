@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const GM = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -129,87 +129,17 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// Function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, GM.generateMarkdown(data), (error) => error ? console.log(error) : console.log(`Success!\n\nDon't forget to add screenshots to your Usage section and links to your collaborators' GitHub profiles (if applicable)!!`));
+    fs.writeFile(fileName, generateMarkdown(data), (error) => error ? console.log(error) : console.log(`Success!\n\nDon't forget to add screenshots to your Usage section and links to your collaborators' GitHub profiles (if applicable)!!`));
 }
 
-// function buildREADME(answers) {
-//     let data = `# ${answers.title}\n`;
-//     // Description
-//     data += `## Description\n${answers.description}\n`;
-
-//     // Features
-//     if (answers.includeFeatures === 'Yes') {
-//         data += `## Features\n`;
-//         data += formatList(answers.features);
-//     }
-
-//     // Deployed
-//     if (answers.includeDeployed === 'Yes') {
-//         data += `## Deployed Project\n${answers.deployed}\n`;
-//     }
-
-//     // Installation
-//     if (answers.includeInstall === 'Yes') {
-//         data += `## Installation\n`;
-//         data += formatList(answers.install);
-//     }
-
-//     // Usage
-//     data += `## Usage\n${answers.usage}\n`;
-
-//     // Credits
-//     if (answers.includeCredits === 'Yes') {
-//         data += `## Credits\n`
-//         data += formatList(answers.credits);
-//     }
-
-//     // Challenges
-//     if (answers.includeChallenges === 'Yes') {
-//         data += `## Challenges\n`;
-//         data += formatList(answers.challenges);
-//     }
-
-//     // Future Development
-//     if (answers.future === 'Yes') {
-//         data += `## Challenges\n`;
-//         data += formatList(answers.challenges);
-//     }
-
-//     // How to Contribute
-//     if (answers.includeContribute === 'Yes') {
-//         data += `## How to Contribute\n${answers.contribute}\n`;
-//     }
-
-//     // Tests
-//     if (answers.includeTests === 'Yes') {
-//         data += `## Tests\n`;
-//         data += formatList(answers.tests);
-//     }
-
-//     // License
-//     data += `## License\n${answers.license}\n`;
-
-//     writeToFile('READMEtest.md', data);
-// }
-
-
-// function formatList(strList) {
-//     let arrList = strList.split(',');
-//     let result = "";
-//     arrList.forEach(element => {
-//         let current = element.trim();
-//         result += `- ${current}\n`;
-//     });
-//     return result;
-// }
-
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     inquirer
     .prompt(questions)
     .then((answers) => {
+        console.log(answers);
         writeToFile('READMEtest.md', answers);
     })
     .catch((error) => {
